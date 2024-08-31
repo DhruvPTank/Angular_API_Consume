@@ -1,0 +1,51 @@
+<div class="list-container">
+    <h2>Movie List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Poster</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Released</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let movie of movies; let i = index"
+          (click)="viewDetails(movie.imdbID)"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>
+            <img
+              [src]="movie.Poster"
+              alt="{{ movie.Title }}"
+              class="movie-poster"
+            />
+          </td>
+          <td>{{ movie.Title }}</td>
+          <td>{{ movie.Year }}</td>
+          <td>{{ movie.Released }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="pagination-controls">
+      <label for="recordsPerPage">Records Per Page:</label>
+      <select
+        id="recordsPerPage"
+        [(ngModel)]="recordsPerPage"
+        (change)="loadMovies()"
+      >
+        <option *ngFor="let option of [10, 20, 50, 100]" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+  
+      <label for="page">Page:</label>
+      <select id="page" [(ngModel)]="page" (change)="loadMovies()">
+        <option *ngFor="let i of [1, 2, 3, 4, 5]" [value]="i">{{ i }}</option>
+      </select>
+    </div>
+  </div>
+  

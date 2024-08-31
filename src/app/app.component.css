@@ -1,0 +1,30 @@
+.detail-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .movie-poster {
+    max-width: 300px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  
+  .ratings {
+    margin-top: 20px;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }

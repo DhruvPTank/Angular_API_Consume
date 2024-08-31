@@ -1,0 +1,28 @@
+<div class="detail-container" *ngIf="movie">
+    <h2>{{ movie.Title }}</h2>
+    <img [src]="movie.Poster" alt="{{ movie.Title }}" class="movie-poster" />
+    <p><strong>Year:</strong> {{ movie.Year }}</p>
+    <p><strong>Rated:</strong> {{ movie.Rated }}</p>
+    <p><strong>Released:</strong> {{ movie.Released }}</p>
+    <p><strong>Runtime:</strong> {{ movie.Runtime }}</p>
+    <p><strong>Genre:</strong> {{ movie.Genre }}</p>
+    <p><strong>Director:</strong> {{ movie.Director }}</p>
+    <p><strong>Writer:</strong> {{ movie.Writer }}</p>
+    <p><strong>Actors:</strong> {{ movie.Actors }}</p>
+    <p><strong>Plot:</strong> {{ movie.Plot }}</p>
+    <p><strong>Language:</strong> {{ movie.Language }}</p>
+    <p><strong>Country:</strong> {{ movie.Country }}</p>
+    <p><strong>Awards:</strong> {{ movie.Awards }}</p>
+    <p><strong>Box Office:</strong> {{ movie.BoxOffice }}</p>
+    <p><strong>IMDB Rating:</strong> {{ movie.imdbRating }}</p>
+    <p><strong>Metascore:</strong> {{ movie.Metascore }}</p>
+  
+    <div class="ratings">
+      <p *ngFor="let rating of movie.Ratings">
+        <strong>{{ rating.Source }}:</strong> {{ rating.Value }}
+      </p>
+    </div>
+  
+    <a routerLink="/list">Back to List</a>
+  </div>
+  
